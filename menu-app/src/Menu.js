@@ -1,158 +1,73 @@
 import React, { Component } from 'react';
 import {
     Box,
-    Accordion,
     AccordionItem,
     AccordionButton,
     AccordionPanel,
-    AccordionIcon
+    AccordionIcon,
+    Table,
+    Thead,
+    Tbody,
+    Tfoot,
+    Tr,
+    Th,
+    Td,
+    TableCaption,
+    TableContainer
   } from '@chakra-ui/react';
-  import { Button, ButtonGroup } from '@chakra-ui/react'
 
 class Menu extends Component {
     state = {  } 
     render() { 
         return (
-          <Box bg='white' textAlign={'center'} borderStyle='solid' p={4} >
-            <h1>MENU Εστιατορίου</h1>
-            <Accordion allowToggle>
+          <div>
+            <>
               <AccordionItem>
                 <h2>
                   <AccordionButton _expanded={{ bg: 'blue', color: 'yellow' }}>
                     <Box flex='1' textAlign='center' fontSize='large'>
-                      Δευτέρα
+                      {this.props.day}
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                  commodo consequat.
+                  <TableContainer>
+                    <Table variant='simple' align='center'>
+                      <Thead></Thead>
+                      <Tbody>
+                        <Td>
+                          <Tr>Γεύμα κυρίως: </Tr>
+                          <Tr>Γεύμα ειδικό: </Tr>
+                          <Tr>Γεύμα γαρνιτούρα: </Tr>
+                          <Tr>Γεύμα σαλάτα: </Tr>
+                          <Tr>Γεύμα επιδόρπιο: </Tr>
+                          <Tr>Δείπνο κυρίως: </Tr>
+                          <Tr>Δείπνο ειδικό: </Tr>
+                          <Tr>Δείπνο γαρνιτούρα: </Tr>
+                          <Tr>Δείπνο σαλάτα: </Tr>
+                          <Tr>Δείπνο επιδόρπιο: </Tr>
+                        </Td>
+                        <Td>
+                          <Tr>{this.props.gevmakirios}</Tr>
+                          <Tr>{this.props.gevmaEidiko} </Tr>
+                          <Tr>{this.props.gevmaGarnitoura} </Tr>
+                          <Tr>{this.props.gevmaSalata} </Tr>
+                          <Tr>{this.props.gevmaEpidorpio} </Tr>
+                          <Tr>{this.props.deipnoKirios} </Tr>
+                          <Tr>{this.props.deipnoEidiko} </Tr>
+                          <Tr>{this.props.deipnoGarnitoura} </Tr>
+                          <Tr>{this.props.deipnoSalata} </Tr>
+                          <Tr>{this.props.deipnoEpidorpio}</Tr>
+                        </Td>
+                      </Tbody>
+                      <Tfoot></Tfoot>
+                    </Table>
+                  </TableContainer>
                 </AccordionPanel>
               </AccordionItem>
-            
-              <AccordionItem>
-                <h2>
-                  <AccordionButton _expanded={{ bg: 'blue', color: 'yellow' }}>
-                    <Box flex='1' textAlign='center' fontSize='large'>
-                      Τρίτη
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                  commodo consequat.
-                </AccordionPanel>
-              </AccordionItem>
-              <AccordionItem>
-                <h2>
-                  <AccordionButton _expanded={{ bg: 'blue', color: 'yellow' }}>
-                    <Box flex='1' textAlign='center' fontSize='large'>
-                      Τετάρτη
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                  commodo consequat.
-                </AccordionPanel>
-              </AccordionItem>
-              <AccordionItem>
-                <h2>
-                  <AccordionButton _expanded={{ bg: 'blue', color: 'yellow' }}>
-                    <Box flex='1' textAlign='center' fontSize='large'>
-                      Πέμπτη
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                  commodo consequat.
-                </AccordionPanel>
-              </AccordionItem>
-              <AccordionItem>
-                <h2>
-                  <AccordionButton _expanded={{ bg: 'blue', color: 'yellow' }}>
-                    <Box flex='1' textAlign='center' fontSize='large'>
-                      Παρασκευή
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                  commodo consequat.
-                </AccordionPanel>
-              </AccordionItem>
-              <AccordionItem>
-                <h2>
-                  <AccordionButton _expanded={{ bg: 'blue', color: 'yellow' }}>
-                    <Box flex='1' textAlign='center' fontSize='large'>
-                      Σάββατο
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                  commodo consequat.
-                </AccordionPanel>
-              </AccordionItem>
-              <AccordionItem>
-                <h2>
-                  <AccordionButton _expanded={{ bg: 'blue', color: 'yellow' }}>
-                    <Box flex='1' textAlign='center' fontSize='large'>
-                      Κυριακή
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                  commodo consequat.
-                </AccordionPanel>
-              </AccordionItem>
-              <AccordionItem>
-                <h2>
-                <AccordionButton _expanded={{ bg: 'blue', color: 'yellow' }}>
-                    <Box flex='1' textAlign='center' fontSize='large'>
-                      Λειτουργία Εστιατορίου
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <h3>Πρωινό</h3>
-                  08:00-09:30
-                  <h3>Μεσημεριανό</h3>
-                  12:30-15:30(ΚΑΘΗΜΕΡΙΝΕΣ)<br></br>
-                  13:00-15:30(ΣΚ και ΑΡΓΙΕΣ)
-                  <h3>Βραδινό</h3>
-                  18:00-20:00
-                </AccordionPanel>
-              </AccordionItem>
-            </Accordion>
-            <ButtonGroup colorScheme='pink' variant='solid' spacing='6'>
-                 <Button>Back</Button>
-            </ButtonGroup>
-          </Box >
+            </>
+          </div>
 
         );
     }
