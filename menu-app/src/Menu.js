@@ -5,76 +5,111 @@ import {
     AccordionButton,
     AccordionPanel,
     AccordionIcon,
-    Accordion
+    Accordion,
+    Text
   } from '@chakra-ui/react';
 
-class Menu extends Component {
-    state = {  } 
-    render() { 
-        return (
-          <div>
-            <>
+function Menu({data}) {
+  return ( 
+      <div>
+        <AccordionItem>
+          <Text>
+            <AccordionButton _hover={{ bg: "rgb(20, 88, 148)" }}
+                margin="0 auto"
+                padding="8px"
+                width="80vw"
+                textAlign="center"
+                marginBottom="0.3em"
+                bgColor="rgb(20, 88, 148)"
+                color="rgb(252, 180, 12)"
+                borderRadius="20"
+                border="none"
+                alt="profPic"
+                overflow="hidden"
+              _expanded={{ bg: "rgb(24, 107, 180)", color: "rgb(227, 160, 2)"}}
+            >
+              <Box flex='1' textAlign='center' fontSize='25px'>
+                {data.day}
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </Text>
+          <AccordionPanel pb={4}>
+
+            <Accordion allowToggle>
+              {/*Accordion gia geuma*/}
               <AccordionItem>
-                <h2>
-                  <AccordionButton _expanded={{ bg: 'blue', color: 'yellow' }}>
-                    <Box flex='1' textAlign='center' fontSize='large'>
-                      {this.props.day}
+                <Text>
+                  <AccordionButton _hover={{ bg: "rgb(20, 88, 148)" }}
+                     margin="0 auto"
+                     padding="3px"
+                     width="60vw"
+                     textAlign="center"
+                     marginBottom="0.3em"
+                     bgColor="rgb(20, 88, 148)"
+                     color="rgb(252, 180, 12)"
+                     borderRadius="20"
+                     border="none"
+                     alt="profPic"
+                     overflow="hidden"
+                    _expanded={{ bg: "rgb(24, 107, 180)", color: "rgb(227, 160, 2)"}}
+                  >
+                    <Box flex='1' textAlign='center' fontSize='20px'>
+                    Γεύμα
                     </Box>
-                    <AccordionIcon />
+                  <AccordionIcon />
                   </AccordionButton>
-                </h2>
+                </Text>
                 <AccordionPanel pb={4}>
-
-                  <Accordion defaultIndex={[0]} allowToggle>
-                    {/*Accordion gia geuma*/}
-                    <AccordionItem>
-                      <h2>
-                        <AccordionButton _expanded={{ bg: 'blue', color: 'yellow' }}>
-                          <Box flex='1' textAlign='center' fontSize='large'>
-                          Γεύμα
-                          </Box>
-                        <AccordionIcon />
-                        </AccordionButton>
-                      </h2>
-                      <AccordionPanel pb={4}>
-                        <div>
-                          {this.props.gevmakirios}<br></br>
-                          {this.props.gevmaEidiko}<br></br>
-                          {this.props.gevmaGarnitoura}<br></br>
-                          {this.props.gevmaSalata}<br></br>
-                          {this.props.gevmaEpidorpio} 
-                        </div>
-                      </AccordionPanel>
-                   </AccordionItem>
-                    {/*Accordion gia deipno*/}
-                   <AccordionItem>
-                      <h2>
-                        <AccordionButton _expanded={{ bg: 'blue', color: 'yellow' }}>
-                          <Box flex='1' textAlign='center' fontSize='large'>
-                          Δείπνο
-                          </Box>
-                        <AccordionIcon />
-                        </AccordionButton>
-                      </h2>
-                      <AccordionPanel pb={4}>
-                        <div>
-                          {this.props.deipnoKirios}<br></br>
-                          {this.props.deipnoEidiko}<br></br>
-                          {this.props.deipnoGarnitoura}<br></br>
-                          {this.props.deipnoSalata}<br></br>
-                          {this.props.deipnoEpidorpio} 
-                        </div>
-                      </AccordionPanel>
-                   </AccordionItem>
-                  </Accordion>
-
+                  <div>
+                    {data.gevmaKirios}<br></br>
+                    {data.gevmaEidiko}<br></br>
+                    {data.gevmaGarnitoura}<br></br>
+                    {data.gevmaSalata}<br></br>
+                    {data.gevmaEpidorpio} 
+                  </div>
                 </AccordionPanel>
-              </AccordionItem>
-            </>
-          </div>
+            </AccordionItem>
+              {/*Accordion gia deipno*/}
+            <AccordionItem>
+                <Text>
+                  <AccordionButton _hover={{ bg: "rgb(20, 88, 148)" }}
+                     margin="0 auto"
+                     padding="3px"
+                     width="60vw"
+                     textAlign="center"
+                     marginBottom="0.3em"
+                     bgColor="rgb(20, 88, 148)"
+                     color="rgb(252, 180, 12)"
+                     borderRadius="20"
+                     border="none"
+                     alt="profPic"
+                     overflow="hidden"
+                    _expanded={{ bg: "rgb(24, 107, 180)", color: "rgb(227, 160, 2)"}}
+                  >
+                    <Box flex='1' textAlign='center' fontSize='20px'>
+                    Δείπνο
+                    </Box>
+                  <AccordionIcon />
+                  </AccordionButton>
+                </Text>
+                <AccordionPanel pb={4}>
+                  <div>
+                    {data.deipnoKirios}<br></br>
+                    {data.deipnoEidiko}<br></br>
+                    {data.deipnoGarnitoura}<br></br>
+                    {data.deipnoSalata}<br></br>
+                    {data.deipnoEpidorpio} 
+                  </div>
+                </AccordionPanel>
+            </AccordionItem>
+            </Accordion>
+            
+          </AccordionPanel>
+        </AccordionItem>
+    </div>
 
-        );
-    }
+   );
 }
- 
+
 export default Menu;

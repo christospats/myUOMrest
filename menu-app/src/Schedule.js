@@ -14,8 +14,21 @@ class Schedule extends Component {
         <>
             <AccordionItem>
                 <h2>
-                <AccordionButton _expanded={{ bg: 'blue', color: 'yellow' }}>
-                    <Box flex='1' textAlign='center' fontSize='large'>
+                <AccordionButton _hover={{ bg: "rgb(20, 88, 148)" }}
+                    margin="0 auto"
+                    padding="8px"
+                    width="80vw"
+                    textAlign="center"
+                    marginBottom="0.3em"
+                    bgColor="rgb(20, 88, 148)"
+                    color="rgb(252, 180, 12)"
+                    borderRadius="20"
+                    border="none"
+                    alt="profPic"
+                    overflow="hidden"
+                    _expanded={{ bg: "rgb(24, 107, 180)", color: "rgb(227, 160, 2)"}}
+                >
+                    <Box flex='1' textAlign='center' fontSize='25px'>
                         Λειτουργία Εστιατορίου
                     </Box>
                     <AccordionIcon />

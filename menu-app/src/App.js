@@ -1,41 +1,37 @@
 import React from 'react';
 import Menu from './Menu';
 import data from './convertcsv (1).json';
-import { Accordion, Box,
-         Button,
-         ButtonGroup
+import { Accordion, 
+         Box,
+         Image,
+         Text
 } from '@chakra-ui/react';
 import Schedule from './Schedule';
+import dinner from './Assets/dinner.png'
 
 function App() {
   return (
-    <Box bg='white' textAlign={'center'} borderStyle='solid' p={4} >
+    <Box bg='white' textAlign={'center'}>
       <Accordion allowToggle>
-      <h1>Menu Εστιατορίου</h1>
-      {
-        data.map(data => {
-          return(
-            <div>
-              <Menu day={data.day}
-                    gevmakirios={data.gevmaKirios}
-                    gevmaEidiko={data.gevmaEidiko}
-                    gevmaGarnitoura={data.gevmaGarnitoura}
-                    gevmaSalata={data.gevmaSalata}
-                    gevmaEpidorpio={data.gevmaEpidorpio}
-                    deipnoKirios={data.deipnoKirios}
-                    deipnoEidiko={data.deipnoEidiko}
-                    deipnoGarnitoura={data.deipnoGarnitoura}
-                    deipnoSalata={data.deipnoSalata}
-                    deipnoEpidorpio={data.deipnoEpidorpio}/>
-            </div>
-          )
-        })
-      }
-      <Schedule />
+        <Box Align='center'>
+          <Text fontSize='30px' fontWeight='bold' fontFamily='cursive'>Menu Εστιατορίου</Text>
+          <Image src={dinner} 
+            width="70px"
+            height="70px"
+            borderRadius="full"   
+          />
+        </Box>
+        {
+          data.map(data => {
+            return(
+              <div>
+                <Menu data={data} key={data.day}/>
+              </div>
+            )
+          })
+        }
+        <Schedule />
       </Accordion>
-      <ButtonGroup colorScheme='pink' variant='solid' spacing='6'>
-        <Button>Back</Button>
-      </ButtonGroup>
     </Box>
     
   );
