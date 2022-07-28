@@ -13,7 +13,7 @@ function App() {
   return (
     <Box bg='white' textAlign={'center'}>
       <Accordion allowToggle>
-        <Box Align='center'>
+        <Box align='center'>
           <Text fontSize='30px' fontWeight='bold' fontFamily='cursive'>Menu Εστιατορίου</Text>
           <Image src={dinner} 
             width="70px"
@@ -24,13 +24,11 @@ function App() {
         {
           data.map(data => {
             return(
-              <div>
                 <Menu data={data} key={data.day}/>
-              </div>
             )
           })
         }
-        <Schedule />
+        <Schedule/>
       </Accordion>
     </Box>
     

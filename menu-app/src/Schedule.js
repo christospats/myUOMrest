@@ -4,16 +4,15 @@ import { Box,
     AccordionItem,
     AccordionButton,
     AccordionPanel,
-    AccordionIcon
+    AccordionIcon,
+    Text
 } from '@chakra-ui/react';
 
-class Schedule extends Component {
-    state = {  } 
-    render() { 
-        return (
+function Schedule(){
+    return (
         <>
             <AccordionItem>
-                <h2>
+                <Text>
                 <AccordionButton _hover={{ bg: "rgb(20, 88, 148)" }}
                     margin="0 auto"
                     padding="8px"
@@ -33,20 +32,19 @@ class Schedule extends Component {
                     </Box>
                     <AccordionIcon />
                 </AccordionButton>
-                </h2>
+                </Text>
                 <AccordionPanel pb={4}>
-                <h3>Πρωινό</h3>
+                <Text>Πρωινό</Text>
                     08:00-09:30
-                <h3>Μεσημεριανό</h3>
+                <Text>Μεσημεριανό</Text>
                 12:30-15:30(ΚΑΘΗΜΕΡΙΝΕΣ)<br></br>
                 13:00-15:30(ΣΚ και ΑΡΓΙΕΣ)
-                <h3>Βραδινό</h3>
+                <Text>Βραδινό</Text>
                 18:00-20:00
                 </AccordionPanel>
             </AccordionItem>
       </>
         );
-    }
 }
- 
+
 export default Schedule;
